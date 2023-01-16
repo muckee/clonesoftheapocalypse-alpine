@@ -5,5 +5,6 @@ RUN apk update && apk add --no-cache \
 RUN addgroup -S 1000 && \
     adduser -S 1000 -G 1000 && \
     chown 1000:1000 /home/1000 && \
-    chmod 770 /home/1000
+    chmod 770 /home/1000 && \
+    mkdir /home/1000/.ssh
 USER 1000
