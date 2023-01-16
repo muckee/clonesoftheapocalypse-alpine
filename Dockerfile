@@ -6,7 +6,7 @@ RUN apk update && apk add --no-cache \
                   nodejs \
                   npm
 
-RUN npm install -g npm && npm install -g \
+RUN npm install -g npm && npm install -g --legacy-peer-deps \
                           @babel/core@7.19.3 \
                           @babel/plugin-syntax-flow@7.18.6 \
                           @babel/plugin-transform-react-jsx@7.19.0 \
