@@ -1,7 +1,9 @@
 FROM alpine:3.14
 RUN apk update && apk add --no-cache \
                   openssh-client \
-                  git
+                  git \
+                  nodejs \
+                  npm
 RUN addgroup -S 1000 && \
     adduser -S 1000 -G 1000 && \
     mkdir /home/1000/.ssh && \
