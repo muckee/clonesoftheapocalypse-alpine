@@ -6,6 +6,8 @@ RUN apk update && apk add --no-cache \
                   nodejs \
                   npm
 
+RUN npm install -g npm && npm i -g yarn
+
 RUN addgroup -S 1000 && \
     adduser -S 1000 -G 1000 && \
     mkdir /home/1000/.ssh && \
@@ -14,7 +16,6 @@ RUN addgroup -S 1000 && \
 ENV HOME /home/1000
 USER 1000
 
-RUN npm install -g npm && npm i -g yarn
 RUN yarn global add @babel/core@7.19.3 \
                     @babel/plugin-syntax-flow@7.18.6 \
                     @babel/plugin-transform-react-jsx@7.19.0 \
