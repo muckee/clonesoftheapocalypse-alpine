@@ -26,25 +26,25 @@ RUN yarn global add @babel/core@7.19.3 \
                     @babel/plugin-transform-react-jsx@7.19.0 \
                     @emotion/react@11.10.5 \
                     @emotion/styled@11.10.5 \
-                    @mui/material@5.10.9 \
-                    @testing-library/dom@8.19.0 \
+                    @mui/material@5.11.4 \
+                    @testing-library/dom@8.20.0 \
                     @testing-library/jest-dom@5.16.5 \
                     @testing-library/react@13.4.0 \
                     @testing-library/user-event@13.5.0 \
-                    eslint@8.0.0 \
+                    eslint@8.32.0 \
                     eslint-config-react-app@7.0.1 \
-                    framer-motion@7.6.1 \
+                    framer-motion@7.10.3 \
                     json2mq@0.2.0 \
                     postcss@8.4.18 \
                     react@18.2.0 \
                     react-dom@18.2.0 \
-                    react-particles@2.3.3 \
-                    react-router-dom@6.4.2 \
+                    react-particles@2.7.1 \
+                    react-router-dom@6.6.2 \
                     react-scripts@5.0.1 \
-                    react-tabs@5.1.0 \
+                    react-tabs@5.2.0 \
                     remixicon@2.5.0 \
-                    tsparticles@2.3.4 \
-                    typescript@4.8.4 \
+                    tsparticles@2.7.1 \
+                    typescript@4.9.4 \
                     web-vitals@2.1.4 \
                     autoprefixer \
                     cross-env
