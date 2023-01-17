@@ -45,10 +45,14 @@ RUN yarn global add @babel/core@7.19.3 \
                     remixicon@2.5.0 \
                     tsparticles@2.3.4 \
                     typescript@4.8.4 \
-                    web-vitals@2.1.4
+                    web-vitals@2.1.4 && \
+                    @bazel/buildifier@5.1.0 \ #dev
+                    @bazel/ibazel@0.16.2 \ #dev
+                    autoprefixer@10.4.12 \ #dev
+                    cross-env@7.0.3 #dev
 
 # Install devDependencies globally as filesystem user
-RUN yarn global add --dev @bazel/buildifier@5.1.0 \
-                          @bazel/ibazel@0.16.2 \
-                          autoprefixer@10.4.12 \
-                          cross-env@7.0.3
+#RUN yarn global add --dev @bazel/buildifier@5.1.0 \
+#                          @bazel/ibazel@0.16.2 \
+#                          autoprefixer@10.4.12 \
+##                          cross-env@7.0.3
