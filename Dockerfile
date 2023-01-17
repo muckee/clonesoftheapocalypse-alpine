@@ -24,8 +24,8 @@ USER 1000
 RUN yarn global add @babel/core@7.19.3 \
                     @babel/plugin-syntax-flow@7.18.6 \
                     @babel/plugin-transform-react-jsx@7.19.0 \
-                    @emotion/react@11.10.4 \
-                    @emotion/styled@11.10.4 \
+                    @emotion/react@11.10.5 \
+                    @emotion/styled@11.10.5 \
                     @mui/material@5.10.9 \
                     @testing-library/dom@8.19.0 \
                     @testing-library/jest-dom@5.16.5 \
