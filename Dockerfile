@@ -8,7 +8,7 @@ RUN apk update && apk add --no-cache \
                   npm
 
 # Update npm and install yarn and workspace-tools as root
-RUN npm install -g npm && npm i -g yarn yarn-workspace-tools
+RUN npm install -g npm && npm i -g yarn yarn-workspace-tools @bazel/buildifier@5.1.0
 
 # Create filesystem user
 RUN addgroup -S 1000 && \
@@ -46,7 +46,6 @@ RUN yarn global add @babel/core@7.19.3 \
                     tsparticles@2.3.4 \
                     typescript@4.8.4 \
                     web-vitals@2.1.4 && \
-                    @bazel/buildifier \
                     @bazel/ibazel@0.16.2 \
                     autoprefixer@10.4.12 \
                     cross-env@7.0.3
