@@ -20,7 +20,7 @@ ENV HOME /home/1000
 # Login as filesystem user
 USER 1000
 
-# Install yarn depependencies globally as filesystem user
+# Install dependencies globally as filesystem user
 RUN yarn global add @babel/core@7.19.3 \
                     @babel/plugin-syntax-flow@7.18.6 \
                     @babel/plugin-transform-react-jsx@7.19.0 \
@@ -46,3 +46,9 @@ RUN yarn global add @babel/core@7.19.3 \
                     tsparticles@2.3.4 \
                     typescript@4.8.4 \
                     web-vitals@2.1.4
+
+# Install devDependencies globally as filesystem user
+RUN yarn global add --dev @bazel/buildifier@5.1.0 \
+                          @bazel/ibazel@0.16.2 \
+                          autoprefixer@10.4.12 \
+                          cross-env@7.0.3
