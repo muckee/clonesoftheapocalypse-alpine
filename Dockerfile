@@ -1,21 +1,26 @@
 FROM alpine:3.14
 
+# Install git, node & npm
 RUN apk update && apk add --no-cache \
                   openssh-client \
                   git \
                   nodejs \
                   npm
 
-RUN npm install -g npm && npm i -g yarn
+# Update npm and install yarn and workspace-tools as root
+RUN npm install -g npm && npm i -g yarn yarn-workspace-tools
 
+# Create filesystem user
 RUN addgroup -S 1000 && \
     adduser -S 1000 -G 1000 && \
     mkdir /home/1000/.ssh && \
     chown -R 1000:1000 /home/1000
-
 ENV HOME /home/1000
+
+# Login as filesystem user
 USER 1000
 
+# Install yarn depependencies globally as filesystem user
 RUN yarn global add @babel/core@7.19.3 \
                     @babel/plugin-syntax-flow@7.18.6 \
                     @babel/plugin-transform-react-jsx@7.19.0 \
