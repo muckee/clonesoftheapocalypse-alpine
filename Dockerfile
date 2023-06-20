@@ -8,7 +8,7 @@ RUN apk update && apk add --no-cache \
                   npm
 
 # Update npm and install yarn and workspace-tools as root
-RUN npm install -g npm && npm i -g yarn && apk del npm && yarn set version berry
+RUN npm install -g npm && npm i -g yarn && apk del npm && yarn set version latest
 
 # Create filesystem user
 RUN addgroup -S 1000 && \
