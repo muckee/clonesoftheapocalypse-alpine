@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.18
 
 # Install git, node & npm
 RUN apk update && apk add --no-cache \
