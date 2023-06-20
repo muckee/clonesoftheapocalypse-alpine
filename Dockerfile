@@ -8,8 +8,8 @@ RUN apk update && apk add --no-cache \
                   # npm
 
 # Update npm and install yarn and workspace-tools as root
-RUN corepack enable
-# RUN npm install -g npm && npm i -g yarn && apk del npm && yarn set version stable
+# RUN corepack enable
+RUN npm install -g npm && npm i -g yarn@stable && apk del npm
 
 # Create filesystem user
 RUN addgroup -S 1000 && \
