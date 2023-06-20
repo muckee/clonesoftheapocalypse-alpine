@@ -5,7 +5,7 @@ RUN apk update && apk add --no-cache \
                   openssh-client \
                   git \
                   nodejs \
-                  # npm
+                  npm
 
 # Update npm and install yarn and workspace-tools as root
 # RUN corepack enable
