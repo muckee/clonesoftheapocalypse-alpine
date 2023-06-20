@@ -4,16 +4,17 @@ FROM alpine:3.18
 RUN apk update && apk add --no-cache \
                   openssh-client \
                   git \
-                  nodejs \
+                  # nodejs \
                   npm
 
 # Update npm and install yarn and workspace-tools as root
-RUN npm install -g npm && npm i -g yarn yarn-workspace-tools && apk del npm
+RUN npm install -g npm && npm i -g yarn@berry && apk del npm
 
 # Create filesystem user
 RUN addgroup -S 1000 && \
     adduser -S 1000 -G 1000 && \
     mkdir /home/1000/.ssh && \
+    touch /home/1000/yarn.lock \
     chown -R 1000:1000 /home/1000
 ENV HOME /home/1000
 
@@ -21,7 +22,7 @@ ENV HOME /home/1000
 USER 1000
 
 # Install dependencies globally as filesystem user
-RUN yarn global add @babel/core@7.19.3 \
+RUN cd /home/1000/ && yarn add @babel/core@7.19.3 \
                     @babel/plugin-syntax-flow@7.18.6 \
                     @babel/plugin-transform-react-jsx@7.19.0 \
                     @emotion/react@11.10.5 \
@@ -48,7 +49,3 @@ RUN yarn global add @babel/core@7.19.3 \
                     web-vitals@2.1.4 \
                     autoprefixer \
                     cross-env
-
-# Install devDependencies globally as filesystem user
-#RUN yarn global add --dev autoprefixer@10.4.12 \
-#                          cross-env@7.0.3
